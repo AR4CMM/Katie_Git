@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoBehaviour
+public class Timer_2 : MonoBehaviour
 {
     bool timerReset = false;
     bool timerActive = false;
-    public float timeValue = 1200;
+    public float timeValue = 120;
     public TextMeshPro timerText;
 
     // Update is called once per frame
@@ -17,18 +17,20 @@ public class Timer : MonoBehaviour
         {
             if (timeValue > 0)
             {
+                //subtract 1 second per frame
                 timeValue -= Time.deltaTime;
             }
             else
             {
-                timeValue = 1200;
+                timeValue = 120;
                 timerActive = false;
             }
             DisplayTime(timeValue);
         }
         if (timerReset == true)
         {
-            timeValue = 1200;
+            //reset timeValue to default
+            timeValue = 120;
             DisplayTime(timeValue);
             timerActive = false;
             timerReset = false;
@@ -37,11 +39,13 @@ public class Timer : MonoBehaviour
 
     void DisplayTime(float timeToDisplay)
     {
-        if(timeToDisplay < 0)
+        if (timeToDisplay < 0)
         {
+            //if time is < 0, display 0
             timeToDisplay = 0;
         }
 
+        //algorithm to display time in minutes and seconds
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
