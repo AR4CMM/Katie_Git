@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Timer
   - Layer
+  - Label
   layers:
   - Default
   - TransparentFX

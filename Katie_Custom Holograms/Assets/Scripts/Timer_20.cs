@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//Timer Script by Katie Gonsoulin
+
 public class Timer_20 : MonoBehaviour
 {
     bool timerReset = false;
